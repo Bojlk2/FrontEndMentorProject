@@ -5,8 +5,19 @@ import Card from './Components/Card'
 import './App.scss'
 
 function App() {
-//aqui va la app
-const [jobs, setJobs] = useState({})
+/* //aqui va la app
+const [jobs, setJobs] = useState({
+  picture:'',
+  company:'',
+  job:'',
+  date:'',
+  journal:'',
+  workPlace:'',
+  skills1:'',
+  skills2:'',
+  skills3:'',
+  skills4:''
+})
 const [jobsData, setJobsData] = useState({})
 const [isEditing, setIsEditing] = useState(false)
 const [editedJobs, setEditedJobs] = useState({})
@@ -51,7 +62,9 @@ const saveEditedJobs = async () => {
 
 
 
-  
+ */  
+    
+
   return (
     <div className="App">
       <div className="container">
