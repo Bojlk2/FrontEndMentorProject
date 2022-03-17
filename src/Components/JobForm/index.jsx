@@ -1,22 +1,9 @@
 import React, {useState} from "react";
 
-const JobForm = () => {
+const JobForm = (props) => {
     let skills =['FrontEnd', 'Senior', 'HTML', 'CSS', 'JavaScript', 'FullStack', 'Midweight', 'Python', 'React', 'Junior', 'Sass', 'Ruby', 'Backend', 'RoR', 'Vue', 'Django']
     
-    const initialJob = {
-        picture:'',
-        company:'',
-        job:'',
-        date:'',
-        journal:'',
-        workPlace:'',
-        skills1:'',
-        skills2:'',
-        skills3:'',
-        skills4:'',
-    }
-
-    const [jobs, setJobs] = useState({initialJob})
+    const [jobs, setJobs] = useState({})
 
     const handleInputChange = e => {
         const {name, value} = e.target
@@ -27,6 +14,17 @@ const JobForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         console.log(jobs)
+        fetch('https://react-crud-2e427-default-rtdb.firebaseio.com/jobs.json',{
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(jobs)
+        }).then(response => {
+            response.json().then(json => {
+                console.log(json)
+            })
+        })
     }
 
     return(
